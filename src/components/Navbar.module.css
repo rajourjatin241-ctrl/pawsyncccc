@@ -1,0 +1,121 @@
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.scrolled {
+  background: rgba(15, 23, 42, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 24px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+}
+
+.logo span {
+  color: var(--teal);
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  align-items: center;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: var(--teal);
+}
+
+.cta {
+  background: var(--teal) !important;
+  color: var(--navy) !important;
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-weight: 700 !important;
+  transition: background 0.2s, transform 0.2s !important;
+}
+
+.cta:hover {
+  background: var(--teal-dark) !important;
+  transform: translateY(-1px);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  color: #fff;
+  font-size: 1.4rem;
+  padding: 4px 8px;
+}
+
+.drawer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 16px 20px;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .drawer {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(15, 23, 42, 0.98);
+    padding: 16px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .drawer a {
+    color: rgba(255, 255, 255, 0.8);
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+
+  .drawer a:hover {
+    background: rgba(45, 212, 191, 0.1);
+    color: var(--teal);
+  }
+
+  .drawerCta {
+    margin: 12px 20px 4px;
+    background: var(--teal) !important;
+    color: var(--navy) !important;
+    border-radius: 999px;
+    text-align: center;
+    font-weight: 700 !important;
+    padding: 12px 24px !important;
+  }
+}
