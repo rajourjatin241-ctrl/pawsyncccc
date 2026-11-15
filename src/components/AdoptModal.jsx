@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './AdoptModal.module.css'
 import { submitApplication } from '../api'
 
-export default function AdoptModal({ pet, onClose }) {
+export default function AdoptModal({ pet, onClose, onSuccess }) {
   const [form, setForm] = useState({
     applicantName: '',
     email: '',
@@ -32,6 +32,8 @@ export default function AdoptModal({ pet, onClose }) {
         message: form.message,
       })
       setStatus('success')
+      onSuccess?.()
+      setTimeout(() => onClose(), 2000)
     } catch (err) {
       setErrorMsg(err.message)
       setStatus('error')
