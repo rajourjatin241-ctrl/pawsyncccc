@@ -1,12 +1,18 @@
 {
-  "framework": "vite",
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install --legacy-peer-deps",
-  "rewrites": [
+  "routes": [
     {
-      "source": "/api/:path*",
-      "destination": "https://pawsync-api.onrender.com/api/:path*"
+      "src": "/api/(.*)",
+      "dest": "https://pawsync-api.onrender.com/api/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
