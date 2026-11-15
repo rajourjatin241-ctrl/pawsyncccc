@@ -1,0 +1,8 @@
+node_modules
+server
+.git
+.agents
+*.md
+DEPLOY-*.md
+deployment-urls.txt
+.DS_Store
