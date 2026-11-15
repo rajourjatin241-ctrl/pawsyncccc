@@ -12,6 +12,7 @@ import Roadmap from './components/Roadmap'
 import NGO from './components/NGO'
 import Support from './components/Support'
 import Footer from './components/Footer'
+import ChatWidget from './components/ChatWidget'
 
 export default function App() {
   return (
@@ -29,6 +30,7 @@ export default function App() {
       <NGO />
       <Support />
       <Footer />
+      <ChatWidget />
     </>
   )
 }

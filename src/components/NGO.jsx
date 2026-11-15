@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './NGO.module.css'
+import NGOModal from './NGOModal'
 
 export default function NGO() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
@@ -27,9 +30,13 @@ export default function NGO() {
               <span className={styles.chip}>✅ Pre-Vetted Leads</span>
               <span className={styles.chip}>📸 Verified Profiles</span>
             </div>
+            <button className={styles.partnerBtn} onClick={() => setModalOpen(true)}>
+              Partner With Us 🤝
+            </button>
           </div>
         </div>
       </div>
+      {modalOpen && <NGOModal onClose={() => setModalOpen(false)} />}
     </section>
   )
 }
