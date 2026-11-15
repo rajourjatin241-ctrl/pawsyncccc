@@ -1,0 +1,20 @@
+{
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    {
+      "id": "F1",
+      "file": "src/components/AdoptModal.jsx",
+      "severity": "blocker",
+      "summary": "AdoptModal ignores the onSuccess prop; Gallery's submitted state and auto-close never trigger",
+      "detail": "Gallery.jsx line 66 passes onSuccess={() => { setSubmitted(true); setModalOpen(false) }} to AdoptModal. AdoptModal destructures only { pet, onClose } — onSuccess is not in scope and is never called. After a successful application POST the modal shows its internal success message but stays open, and the PetCard button never switches to 'Applied for X!' state. Fix: add onSuccess to AdoptModal's prop destructure and call onSuccess?.() after setStatus('success') in handleSubmit."
+    },
+    {
+      "id": "F2",
+      "file": ".gitignore",
+      "severity": "blocker",
+      "summary": "server/.env with real JWT_SECRET and admin password is not excluded from git",
+      "detail": "The root .gitignore does not contain server/.env or any .env pattern. server/.env contains JWT_SECRET=pawsync_jwt_secret_2024 and ADMIN_PASSWORD=pawsync2024. Any git push will commit these credentials to the remote. Fix: add 'server/.env' (or '**/.env') to .gitignore."
+    }
+  ],
+  "reviewDoc": "/Users/jatinrajour/Desktop/pawsync/.agents/tasks/pawsync-backend-review.md"
+}

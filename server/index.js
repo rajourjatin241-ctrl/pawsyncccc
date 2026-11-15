@@ -9,10 +9,16 @@ const app = express()
 const allowedOrigins = [
   'http://localhost:5173',
   'https://rajourjatin241-ctrl.github.io',
+  'https://pawsync.vercel.app',
+  /\.vercel\.app$/,
 ]
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) return callback(null, true)
+    if (!origin) return callback(null, true)
+    const allowed = allowedOrigins.some(o => 
+      typeof o === 'string' ? o === origin : o.test(origin)
+    )
+    if (allowed) return callback(null, true)
     callback(new Error('Not allowed by CORS'))
   },
   credentials: true,
