@@ -1,0 +1,30 @@
+🚀 PAWSYNC DEPLOYMENT - OPEN THESE IN ORDER
+================================================
+
+STEP 1: DATABASE (5 min)
+→ https://www.mongodb.com/cloud/atlas/register
+
+STEP 2: BACKEND (5 min)  
+→ https://dashboard.render.com/register
+
+STEP 3: FRONTEND (3 min)
+→ https://vercel.com/signup
+
+================================================
+
+📋 SAVE THESE VALUES AS YOU GO:
+
+[ ] MongoDB password: _____________________
+
+[ ] MongoDB connection string:
+    mongodb+srv://pawsync:PASSWORD@cluster0.xxxxx.mongodb.net/pawsync?retryWrites=true&w=majority
+
+[ ] Render backend URL: 
+    https://pawsync-api-_____.onrender.com
+
+[ ] Vercel frontend URL:
+    https://pawsyncccc.vercel.app
+
+================================================
+
+📖 FULL GUIDE: Open DEPLOY-NOW.md
